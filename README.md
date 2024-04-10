@@ -43,6 +43,9 @@
 - Utilizando `django-admin` y `manage.py`  , crear el proyecto `onlyflans`, migrar y ejecutar para comprobar errores.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+ 
+ ![Pantallazo Freeze](requerimientos_hitos/pip_freeze.png)
+ ![Pantallazo runserver](requerimientos_hitos/runserver_py.png)
 
 ---
 
