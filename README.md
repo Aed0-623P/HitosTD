@@ -40,7 +40,7 @@
   - dtzdata 2024.1
 
 - Verificar si los requerimientos se encuentran instalados vía `pip freeze`.
-- Utilizando `django-admin`, crear el proyecto `onlyflans`, migrar y ejecutar para comprobar errores.
+- Utilizando `django-admin` y `manage.py`  , crear el proyecto `onlyflans`, migrar y ejecutar para comprobar errores.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
