@@ -42,10 +42,12 @@
 - Verificar si los requerimientos se encuentran instalados vía `pip freeze`.
 - Utilizando `django-admin` y `manage.py`  , crear el proyecto `onlyflans`, migrar y ejecutar para comprobar errores.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
- 
+ <div></div>
  ![Pantallazo Freeze](requerimientos_hitos/pip_freeze.png)
+  <div></div>
  ![Pantallazo runserver](requerimientos_hitos/runserver_py.png)
+
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
