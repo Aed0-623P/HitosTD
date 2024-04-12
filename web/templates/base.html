@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {% block header %}
+    <div style="background: red;">
+        header
+    </div>
+    {% endblock %}
+
+    {% block navbar %}
+    <div style="background: yellow;">
+        navbar
+    </div>
+    {% endblock %}
+
+    {% block content %}
+    <div style="background:white">
+        content
+    </div>
+    {% endblock %}
+
+    {% block footer %}
+    <div style="background:green">
+        footer
+    </div>
+    {% endblock %}
+</body>
+
+</html>
