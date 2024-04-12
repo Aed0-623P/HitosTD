@@ -33,9 +33,10 @@
     </nav>
   {% endblock %}
     {% block header %}
+    {% load static %}
     <div style="background: red;">
-        header
-    </div>
+            <img src="{% static 'logo.png' %}">
+        </div>
     {% endblock %}
 
     {% block content %}
@@ -58,4 +59,3 @@
 </body>
 
 </html>
-
