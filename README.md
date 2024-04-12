@@ -53,17 +53,18 @@
 
 ## Hito 2 <a name="hito2"></a>
 
-- texto
-- texto
-- texto
+- Creación de distintos templates HTML
 
-  - texto
-  - texto
-  - texto
-  - texto
+!	[Pantallazo HTML](requerimientos_hitos_2/templates_docu.png)
 
-- texto
-- texto
+- Implementación inicial de bootstrap, en este ejemplo un carrousel para el index
+
+!	[Pantallazo Bootstrap](requerimientos_hitos_2/bootstrap_docu.png)
+
+- Levantar proyecto para verificar si los cambios se encuentran funcionando, aún falta bastante por implementar, pero va por un buen camino.
+
+!	[Pantallazo Runserver](requerimientos_hitos_2/crudo_smartphone_docu.png)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

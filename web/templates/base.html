@@ -9,8 +9,9 @@
 </head>
 
 <body>
+  <title>Bienvenido a onlyflans</title>
   {% block 'navbar' %}
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light; container">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Onlyflans</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,20 +35,20 @@
   {% endblock %}
     {% block header %}
     {% load static %}
-    <div style="background: red;">
-            <img src="{% static 'logo.png' %}">
+    <div style="background: #395B50; container">
+            <img src="{% static 'logo.png' %}" width=100%>
         </div>
     {% endblock %}
 
     {% block content %}
-    <div style="background:white">
+    <div style="background:white" class="container">
         content
     </div>
     {% endblock %}
 
     {% block footer %}
-    <div style="background:green">
-        footer
+    <div style="background:green; text-align:center; color:white; container">
+        <h1>Desarrollado por Felipe Aedo para Desafío Latam</h1>
     </div>
     {% endblock %}
 
