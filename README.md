@@ -41,11 +41,11 @@
 
 - Verificar si los requerimientos se encuentran instalados vía `pip freeze`.
 
- ![Pantallazo Freeze](requerimientos_hitos_1/pip_freeze.png)
+ ![Pantallazo Freeze](requerimientos_hito_1/pip_freeze.png)
 
 - Utilizando `django-admin` y `manage.py`  , crear el proyecto `onlyflans`, migrar y ejecutar para comprobar errores.
 
- ![Pantallazo runserver](requerimientos_hitos_1/runserver_py.png)
+ ![Pantallazo runserver](requerimientos_hito_1/runserver_py.png)
 
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -55,15 +55,15 @@
 
 - Creación de distintos templates HTML
 
- ![Pantallazo HTML](requerimientos_hitos_2/templates_docu.png)
+ ![Pantallazo HTML](requerimientos_hito_2/templates_docu.png)
 
 - Implementación inicial de bootstrap, en este ejemplo un carrousel para el index
 
- ![Pantallazo Bootstrap](requerimientos_hitos_2/bootstrap_docu.png)
+ ![Pantallazo Bootstrap](requerimientos_hito_2/bootstrap_docu.png)
 
 - Levantar proyecto para verificar si los cambios se encuentran funcionando, aún falta bastante por implementar, pero va por un buen camino.
 
- ![Pantallazo Runserver](requerimientos_hitos_2/crudo_smartphone_docu.png)
+ ![Pantallazo Runserver](requerimientos_hito_2/crudo_smartphone_docu.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
