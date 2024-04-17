@@ -23,5 +23,6 @@ urlpatterns = [
     path("",index,name="index"),
     path("about/",about,name="about"),
     path("welcome/",welcome,name="welcome"),
-    path("test/", test ,name="test")
+    path("test/", test ,name="test"),
+    path("contacto/", contacto,name="contacto"),
 ]
