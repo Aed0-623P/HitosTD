@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-<div class="container">
-    Contacto
-    <form action="/contacto" method="post">
+<div class="container" >
+    <h1>Contáctanos</h1>
+    <form method="POST" class="row">
         {% csrf_token %}
-        {{form}}
-        <input type="submit" value="Submit">
+        {{form.non_field_errors}}
+        {{form.customer_email.label_tag}}
+        {{form.customer_email}}
+        {{form.customer_email.errors}}
+        <p class="text-warning bg-dark">{{form.customer_email.errors}}</p>
+        {{form.customer_name.label_tag}}
+        {{form.customer_name}}
+        {{form.customer_name.errors}}
+        <p class="text-warning bg-dark">{{form.customer_name.errors}}</p>
+        {{form.message.label_tag}}
+        {{form.message}}
+        <p class="text-warning bg-dark">{{form.message.errors}}</p>
+        <input type="submit">
     </form>
 </div>
 
