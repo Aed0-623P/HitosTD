@@ -1,24 +1,47 @@
+/* colores disponibles para memear #A09DFF celestito
+#1F3AAA un azul más intenso #AA83B8 un morado #00A98F agua */
+
+
 body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
 }
 
-.header {
+
+.header-style{
     background: #395B50;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    width: 100%;
 }
 
-.content {
-    background: white;
+.footer-container {
+    background: #8EB3A6;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-text {
+    color: black;
+    margin: 0;
+    font-size: 30px;
 }
 
 .footer {
-    background: green;
-    text-align: center;
-    color: white;
-    padding: 20px;
+    transition: transform 0.3s ease;
 }
+
+.hidden-footer {
+transform: translateY(100%);
+}
+
+.login-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 

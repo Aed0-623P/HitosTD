@@ -1,8 +1,56 @@
 {% extends 'base.html' %}
+{%load static%}
+
+{% block 'navbar' %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">Onlyflans</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'welcome' %}">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-flex align-items-center">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <p class="nav-link mb-0">Bienvenido {{ user.username }}</p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                </li>
+                {% endif %}
+            </ul>
+            
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block header %}
+<div class="header-style" style="background: none;">
+    <img src="{% static 'logo.png' %}" style="width: 35%;" alt="Logo">
+</div>
+{% endblock %}
 
 {% block content %}
-
-<div class="container" justify="left" align="center">
+<div class="container" justify="left" align="center" >
     <h1>Contáctanos</h1>
     <form method="POST" class="row col-md-4 col-lg-8" >
         {% csrf_token %}
@@ -21,6 +69,10 @@
         <input type="submit">
     </form>
 </div>
+{% endblock %}
 
-
+{% block footer %}
+<div style="background-color: none; text-align: center; color: white; padding: 40px 0;" >
+    <div style="color:black; margin: 0; font-size: 30px;">Desarrollado por Felipe Aedo para Desafío Latam</div> 
+</div>
 {% endblock %}
