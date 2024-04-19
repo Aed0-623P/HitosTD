@@ -1,6 +1,11 @@
 /* colores disponibles para memear #A09DFF celestito
 #1F3AAA un azul más intenso #AA83B8 un morado #00A98F agua */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 
 body, html {
     height: 100%;
@@ -44,4 +49,8 @@ transform: translateY(100%);
     width: 100%;
 }
 
-
+.bienvenido{
+    text-align: center;
+    color: #00A98F;
+    text-transform: capitalize;
+}

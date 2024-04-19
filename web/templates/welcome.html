@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- implementar bootstrap-->
-<h1 style="text-align: center;">Bienvenido {{ user.username }}</h1>
-<!--                                                                      -->
+<div class="card-body bienvenido bg-dark" style="padding-top: 20px;" >
+    <h5 class="card-title">Welcome {{ user.username }}</h5>
+    <p class="card-text">"Welcome aboard! 🎉 We're thrilled to have you join our community. 
+        Your decision to create an account opens up a world of possibilities. From exclusive offers to personalized experiences, 
+        we're here to make your journey with us unforgettable. Feel free to explore, shop, and connect with us. 
+        If you ever need assistance, our team is just a message away. Here's to new beginnings and exciting adventures ahead!
+        Cheers to you, and thank you for choosing us."</p>
+</div>
 
-<div class="container-fluid bg-dark text-light" style="padding-top: 20px;">
+<div class="container-fluid bg-dark text-light" style="padding-top: 20px;sborder: 0px;">
   <div class="row justify-content-center">
       {% for flan in flanes %}
-      <div class="col-md-4 col-lg-3">
+      <div class="col-md-4 col-lg-2">
           <div class="card mb-3">
               <img src="{{ flan.image_url }}" class="card-img-top" style="height: 200px; object-fit: cover;">
               <div class="card-body">
