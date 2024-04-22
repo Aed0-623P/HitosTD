@@ -73,13 +73,13 @@
 ## Hito 3 <a name="hito3"></a>
 
  ![Pantallazo Runserver](hito_3/8_flan.png)
- ![Pantallazo Runserver](index_(pantallazo_con_requerimientos_hito4).png)
- ![Pantallazo Runserver](pantallazo_welcome_(con_requerimientos_hito4).png)
- ![Pantallazo_Runserver](about.png)
- ![Pantallazo Runserver](contacto_admin.png)
- ![Pantallazo Runserver](contacto_correo_erroneo.png)
- ![Pantallazo Runserver](contacto_correo_no_erroneo.png)
- ![Pantallazo Runserver](exito_contacto.png) 
+ ![Pantallazo](index_(pantallazo_con_requerimientos_hito4).png)
+ ![Pantallazo](pantallazo_welcome_(con_requerimientos_hito4).png)
+ ![Pantallazo](about.png)
+ ![Pantallazo](contacto_admin.png)
+ ![Pantallazo](contacto_correo_erroneo.png)
+ ![Pantallazo](contacto_correo_no_erroneo.png)
+ ![Pantallazo](exito_contacto.png) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
