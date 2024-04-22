@@ -72,7 +72,7 @@
 
 ## Hito 3 <a name="hito3"></a>
 
-Placeholder
+ ![Pantallazo Runserver](hito_3/8_flan.jpg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
