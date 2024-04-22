@@ -3,6 +3,7 @@ from .models import Flan
 from .forms import ContactFormForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
+import random
 # Create your views here.
 
 def index(request):
@@ -41,5 +42,14 @@ class CustomLogoutView(LogoutView):
 
 def flan_detail(request,flan_id):
     flan = get_object_or_404(Flan, pk=flan_id)
-    return render(request, 'flan_detail.html', {'flan': flan})
+    random_flans = random.sample(list(Flan.objects.exclude(pk=flan_id)), 3)
+    context = {
+        'flan': flan,
+        'random_flans': random_flans
+    }
+    return render(request, 'flan_detail.html', context)
 
+def flan_search(request):
+    query = request.GET.get('query')
+    flans = Flan.objects.filter(name__icontains=query) if query else Flan.objects.none()
+    return render(request, 'base.html', {'flans': flans, 'query': query})

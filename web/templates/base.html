@@ -35,10 +35,31 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'welcome' %}">Welcome</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contact</a>
-                        </li>
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contact
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{% url 'contacto' %}">Contacto empresas</a></li>
+                              <li><a class="dropdown-item" href="https://www.intercom.com/">Servicio en línea</a></li>
+                              <li><a class="dropdown-item" href="https://maps.app.goo.gl/VQmL6BSyR8sSkWLm6">Nuestra ubicación</a></li>
+                            </ul>
+                          </div>
                     </ul>
+                    <!-- no funciona pero esta la idea, a beatriz le funcionaba-->
+                    <form class="d-flex" role="search" action="{% url 'flan_search' %}" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                {% if flans %}
+                    <ul>
+                    {% for flan in flans %}
+                        <li>{{ flan.name }}</li>
+                    {% endfor %}
+                    </ul>
+                    {% else %}
+                        <p>No flans found.</p>
+                {% endif %}
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
                         <li class="nav-item">

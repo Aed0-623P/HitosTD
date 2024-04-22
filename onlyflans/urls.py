@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from web.views import index,about,welcome,contacto,exito
+from web.views import index,about,welcome,contacto,exito,flan_search
 from web import views
 
 urlpatterns = [
@@ -29,4 +29,5 @@ urlpatterns = [
     path('registration/', include('django.contrib.auth.urls')),
     path('flan/<int:flan_id>/', views.flan_detail, name='flan_detail'),
     re_path(r'^.*$', views.error_404),
+    path('flan/search/', flan_search, name='flan_search'),
     ]

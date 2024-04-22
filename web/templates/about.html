@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
+{%load static%}
 <!--sobreescribir para eliminar header-->
 {% block header %}
 {% endblock %}
 {% block content %}
-<div class="container testerino">
-    <h1 align="center">Quienes somos</h1>
-        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae commodi neque repellendus incidunt iusto molestias provident, 
-            quaerat, voluptatem animi amet aperiam dolorum veritatis voluptatibus? Ullam esse ipsam, voluptatem, perferendis id nesciunt, nemo ratione aspernatur autem quibusdam 
-            dolor architecto optio. Quidem in minima mollitia iure? Aliquam est dolorum tempora sapiente necessitatibus repudiandae esse ab, libero repellendus, ad laborum, dolorem atque?
-             Animi tenetur ex corporis eos architecto maxime dignissimos praesentium dolore voluptates libero nobis nam ducimus vitae, 
-            aliquid fugit aliquam iusto consequatur voluptatibus. Beatae provident vitae totam praesentium! Non reiciendis quam quibusdam,
-             excepturi dicta enim. Perferendis culpa, laudantium modi sapiente tempore eius dolorem sed dignissimos recusandae sit, 
-             nostrum numquam quae? Amet quas dolorum, nobis illum enim quaerat fuga maiores sed officiis. Iure, ducimus quae obcaecati tempore labore eum 
-             illum doloremque nulla maxime maiores. Eligendi quae debitis voluptatum magnam laudantium quas quis id veniam officia, dolore quam minus similique 
-             quibusdam laborum repudiandae incidunt officiis quo ea! Culpa aut molestias deserunt, consequuntur tempore, sint dolorem est et repellendus praesentium non. 
-             Doloremque voluptates porro suscipit natus quo ipsa necessitatibus ex repudiandae veritatis voluptate aliquam sed nam delectus voluptas excepturi, 
-             velit voluptatibus non a sunt dolorum. Perferendis iusto tenetur ratione reiciendis quidem similique nesciunt, quia voluptas.</h2>
+<div class="container my-4">
+    <h1 align="center" class="mb-4">Quienes somos</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <img src={% static 'kitchen.jpg' %} class="img-fluid" alt="Vertical Image">
+        </div>
+        <div class="col-md-8">
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae commodi neque repellendus incidunt iusto molestias provident, 
+                quaerat, voluptatem animi amet aperiam dolorum veritatis voluptatibus? Ullam esse ipsam, voluptatem, perferendis id nesciunt, nemo ratione aspernatur autem quibusdam 
+                dolor architecto optio. Quidem in minima mollitia iure? Aliquam est dolorum tempora sapiente necessitatibus repudiandae esse ab, libero repellendus, ad laborum, dolorem atque?
+                Animi tenetur ex corporis eos architecto maxime dignissimos praesentium dolore voluptates libero nobis nam ducimus vitae, 
+                aliquid fugit aliquam iusto consequatur voluptatibus. Beatae provident vitae totam praesentium! Non reiciendis quam quibusdam,
+                excepturi dicta enim. Perferendis culpa, laudantium modi sapiente tempore eius dolorem sed dignissimos recusandae sit, 
+                nostrum numquam quae? Amet quas dolorum, nobis illum enim quaerat fuga maiores sed officiis. Iure, ducimus quae obcaecati tempore labore eum 
+                illum doloremque nulla maxime maiores. Eligendi quae debitis voluptatum magnam laudantium quas quis id veniam officia, dolore quam minus similique 
+                quibusdam laborum repudiandae incidunt officiis quo ea! Culpa aut molestias deserunt, consequuntur tempore, sint dolorem est et repellendus praesentium non. 
+                Doloremque voluptates porro suscipit natus quo ipsa necessitatibus ex repudiandae veritatis voluptate aliquam sed nam delectus voluptas excepturi, 
+                velit voluptatibus non a sunt dolorum. Perferendis iusto tenetur ratione reiciendis quidem similique nesciunt, quia voluptas.</h4>
+        </div>
+    </div>
 </div>
 {% endblock %}
