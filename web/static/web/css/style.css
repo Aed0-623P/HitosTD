@@ -50,7 +50,14 @@ transform: translateY(100%);
 }
 
 .bienvenido{
-    text-align: center;
+    text-align: justify;
     color: #00A98F;
     text-transform: capitalize;
 }
+
+.card-detail{
+    margin: 300px;
+}
+
+/*test area*/
+

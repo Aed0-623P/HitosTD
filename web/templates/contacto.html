@@ -4,12 +4,14 @@
 {% block 'navbar' %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'index' %}">Onlyflans</a>
+        <a href="{% url 'index' %}" class="navbar-brand" aria-label="Toggle navigation">
+            <img src="{% static 'logo.png' %}" style="width: auto; height: 30px;" alt="Logo">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Index</a>
                 </li>
@@ -23,11 +25,11 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav d-flex align-items-center">
+            <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <p class="nav-link mb-0">Bienvenido {{ user.username }}</p>
-                </li>
+                </li>   
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
                 </li>
@@ -37,10 +39,9 @@
                 </li>
                 {% endif %}
             </ul>
-            
         </div>
     </div>
-</nav>
+</nav>    
 {% endblock %}
 
 {% block header %}
@@ -55,7 +56,7 @@
     <form method="POST" class="row col-md-4 col-lg-8" >
         {% csrf_token %}
         {{form.non_field_errors}}
-        {{form.customer_email.label_tag}}
+        {{form.customer_email.label_tag}}   
         {{form.customer_email}}
         {{form.customer_email.errors}}
         <p class="text-warning bg-dark">{{form.customer_email.errors}}</p>
@@ -73,6 +74,11 @@
 
 {% block footer %}
 <div style="background-color: none; text-align: center; color: white; padding: 40px 0;" >
-    <div style="color:black; margin: 0; font-size: 30px;">Desarrollado por Felipe Aedo para Desafío Latam</div> 
+    <div style="color:black; margin: 0; font-size: 30px;">Desarrollado por Felipe Aedo para Desafío Latam</div>
+        <div class="social-icons">
+        <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+    </div>
 </div>
 {% endblock %}
