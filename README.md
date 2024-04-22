@@ -87,7 +87,14 @@
 
 ## Hito 4 <a name="hito4"></a>
 
-Placeholder
+ ![Pantallazo Runserver](hito_4/bienvenido_usuario.png)
+ ![Pantallazo](hito_4/cerrar_sesion.png)
+ ![Pantallazo](hito_4/elemento_agregado.png)
+ ![Pantallazo](hito_4/inicio_sesion_exitoso.png)
+ ![Pantallazo](hito_4/pagina_iniciar_sesion.png)
+ ![Pantallazo](hito_4/pagina_inicio.png)
+g
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
