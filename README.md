@@ -93,8 +93,6 @@
  ![Pantallazo](hito_4/inicio_sesion_exitoso.png)
  ![Pantallazo](hito_4/pagina_iniciar_sesion.png)
  ![Pantallazo](hito_4/pagina_inicio.png)
-g
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
