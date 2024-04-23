@@ -16,9 +16,6 @@ def about(request):
 def exito(request):
     return render(request, 'exito.html')
 
-def error_404(request):
-    return render(request, '404.html', status=404)
-
 @login_required
 def welcome(request):
     flanes_privados = Flan.objects.filter(is_private=True)

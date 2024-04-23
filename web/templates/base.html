@@ -34,7 +34,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'welcome' %}">Welcome</a>
-                        </li>
+                        </li>                        
                         <div class="dropdown ">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contact
@@ -46,11 +46,12 @@
                             </ul>
                           </div>
                     </ul>
-                    <!-- no funciona pero esta la idea, a beatriz le funcionaba-->
+                    <!-- no funciona pero esta la idea, a beatriz le funcionaba
+
                     <form class="d-flex" role="search" action="{% url 'flan_search' %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form>                
                 {% if flans %}
                     <ul>
                     {% for flan in flans %}
@@ -60,6 +61,8 @@
                     {% else %}
                         <p>No flans found.</p>
                 {% endif %}
+                -->
+                
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
