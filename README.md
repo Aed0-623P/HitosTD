@@ -20,9 +20,6 @@
     <li><a href="#hito2">Hito 2</a></li>
     <li><a href="#hito3">Hito 3</a></li>
     <li><a href="#hito4">Hito 4</a></li>
-    <li><a href="#hito5">Hito 5</a></li>
-    <li><a href="#hito6">Hito 6</a></li>
-    <li><a href="#hito7">Hito 7</a></li>
   </ol>
 </details>
 
@@ -93,29 +90,5 @@
  ![Pantallazo](hito_4/inicio_sesion_exitoso.png)
  ![Pantallazo](hito_4/pagina_iniciar_sesion.png)
  ![Pantallazo](hito_4/pagina_inicio.png)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
----
-
-## Hito 5 <a name="hito5"></a>
-
-Placeholder
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
----
-
-## Hito 6 <a name="hito6"></a>
-
-Placeholder
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
----
-
-## Hito 7 <a name="hito7"></a>
-
-Placeholder
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
