@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ["https://hitostd.onrender.com/"]
+ALLOWED_HOSTS = ["https://hitostd-1.onrender.com/"]
 
 
 # Application definition
