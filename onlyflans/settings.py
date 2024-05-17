@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Obtén la SECRET_KEY de las variables de entorno
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY="django-insecure-yry3uidnmxl1yeu3@&uy$%yy--g(z)zg^8d6lp2uwy*hp7f%*p"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =  True if os.getenv('DEBUG')=='True' else False
