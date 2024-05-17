@@ -34,7 +34,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'welcome' %}">Welcome</a>
-                        </li>                        
+                        </li>
                         <div class="dropdown ">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contact
@@ -46,23 +46,6 @@
                             </ul>
                           </div>
                     </ul>
-                    <!-- no funciona pero esta la idea, a beatriz le funcionaba
-
-                    <form class="d-flex" role="search" action="{% url 'flan_search' %}" method="GET">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>                
-                {% if flans %}
-                    <ul>
-                    {% for flan in flans %}
-                        <li>{{ flan.name }}</li>
-                    {% endfor %}
-                    </ul>
-                    {% else %}
-                        <p>No flans found.</p>
-                {% endif %}
-                -->
-                
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -100,9 +83,9 @@
         <div class="footer mt-auto py-3 footer-container">
             <div class="footer-text">Desarrollado por Felipe Aedo para Desafío Latam</div>
             <div class="social-icons">
-                <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>                
-                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
             </div>
         </div>
         {% endblock %}
