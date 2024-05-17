@@ -22,7 +22,7 @@ load_dotenv()
 SECRET_KEY="django-insecure-yry3uidnmxl1yeu3@&uy$%yy--g(z)zg^8d6lp2uwy*hp7f%*p"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  True if os.getenv('DEBUG')=='True' else False
+DEBUG =  True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
