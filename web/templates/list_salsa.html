@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <h1>All Salsa Products</h1>
+    <div class="row">
+        {% for salsa in salsas %}
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 h-100">
+                <img src="{{ salsa.image_url.url }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ salsa.name }}</h5>
+                    <p class="card-text">{{ salsa.description }}</p>
+                    <p class="card-text">Price: ${{ salsa.price }}</p>
+                    <a href="{% url 'salsa_detail' salsa.id %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <img src="{{ salsa.image_url.url }}" class="img-fluid rounded mx-auto d-block" style="max-width: 100%;">
+        </div>
+        <div class="col-md-8">
+            <div class="card border-0 h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">{{ salsa.name }}</h5>
+                        <p class="card-text">{{ salsa.description }}</p>
+                        <p class="card-text">Precio: ${{ salsa.price }}</p>
+                    </div>
+                    <div>
+                        <a href="{% url 'index' %}" class="btn btn-primary align-self-end">Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
