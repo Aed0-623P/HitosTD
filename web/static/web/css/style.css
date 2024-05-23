@@ -59,5 +59,11 @@ transform: translateY(100%);
     margin: 300px;
 }
 
-/*test area*/
+.carousel-item img {
+    object-fit: cover;
+    aspect-ratio: 1.91/1;
+    height: 400px; /* Set the height to 25% of the viewport height */
+    width: 100%;
+}
 
+/*test area*/
