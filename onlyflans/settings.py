@@ -31,8 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ["*","hitostd.onrender.com"]
-CSFR_TRUSTED_ORIGINS = ['https://localhost:8000','https://hitostd.onrender.com']
+ALLOWED_HOSTS = ["*"]
+CSFR_TRUSTED_ORIGINS = ['https://localhost:8000']
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
@@ -140,3 +140,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+#settings de correo
+
+#EMAIL_HOST = 'smtp.email_host'
+#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

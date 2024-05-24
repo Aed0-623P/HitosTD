@@ -1,28 +1,37 @@
 {% extends 'base.html' %}
 {%load static%}
-<!--sobreescribir para eliminar header-->
-{% block header %}
-{% endblock %}
-{% block content %}
-<div class="container my-4">
-    <h1 align="center" class="mb-4">Quienes somos</h1>
-    <div class="row">
-        <div class="col-md-4">
-            <img src={% static 'kitchen.jpg' %} class="img-fluid" alt="Vertical Image">
-        </div>
 
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">Quienes somos</h1>
+    <div class="row align-items-center">
+        <div class="col-md-4 mb-4 mb-md-0 d-none d-md-block">
+            <img src="{% static 'about.jpg' %}" class="img-fluid" alt="Vertical Image">
+        </div>
         <div class="col-md-8">
-            <h3>10 años en el mercado elaborando pastas frescas y salsas con las mejores materias primas. El resultado: Productos de Calidad Gourmet. 
+            <h3 class="mb-4">10 años en el mercado elaborando pastas frescas y salsas con las mejores materias primas. El resultado: Productos de Calidad Gourmet. 
                 Vendemos por mayor para que puedas ofrecer a tus clientes una experiencia italiana inigualable.</h3>
-            <ul>
-                <li>Pastas y Salsas para Veganos.</li>
-                <li>Tartas y Dulces.</li>
-                <li>Productos para Banquetería</li>
-                <li>Y traemos directamente de Italia el mejor café de grano: Maskafé</li>
+            <div class="row mb-4 d-none d-md-flex">
+                <div class="col-4">
+                    <img src="{% static 'about_1.jpg' %}" class="img-fluid" alt="Image 1" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="col-4">
+                    <img src="{% static 'about_2.jpg' %}" class="img-fluid" alt="Image 2" style="height: 250px; object-fit: cover;">
+                </div>
+                <div class="col-4">
+                    <img src="{% static 'about_3.jpg' %}" class="img-fluid" alt="Image 3" style="height: 250px; object-fit: cover;">
+                </div>
+            </div>
+            <ul class="list-unstyled mb-4">
+                <li class="mb-2">Pastas y Salsas para Veganos.</li>
+                <li class="mb-2">Tartas y Dulces.</li>
+                <li class="mb-2">Productos para Banquetería.</li>
+                <li class="mb-2">Y traemos directamente de Italia el mejor café de grano: Maskafé.</li>
             </ul>
             <h4>Somos una muy buena alternativa para externalizar procesos, ahorrar mano de obra y ampliar tu oferta de productos.</h4>
         </div>
     </div>
 </div>
-
 {% endblock %}
+

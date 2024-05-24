@@ -1,14 +1,48 @@
 {% load static%}
 
-<div class="footer mt-auto py-3 footer-container">
-    <div class="footer-text">Los Sabores De Natalina</div>
-    <div class="social-icons">
-        <a href="https://api.whatsapp.com/send?phone=56998260954" target="_blank"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
-        <a href="https://www.facebook.com/lossaboresdenatalina/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="https://www.instagram.com/lossaboresdenatalina/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-    </div>
+    <div class="footer mt-auto py-3">
+        <footer class="text-center text-white">
+            <div class="footer-text">Los Sabores De Natalina</div>
 
-    contacto: 
-    9 9826 0954
-    lossaboresdenatalina@gmail.com
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                            <p class="footer-text">contacto: 
+                9 9826 0954
+                lossaboresdenatalina@gmail.com</p>
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #3b5998;"
+                        href="https://www.facebook.com/lossaboresdenatalina/"
+                        role="button"
+                    ><i class="fab fa-facebook-f"></i></a>
+                    <!-- Google -->
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #dd4b39;"
+                        href="{% url 'contacto' %}"
+                        role="button"
+                    ><i class="fab fa-google"></i></a>
+                    <!-- Instagram -->
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: #ac2bac;"
+                        href="https://www.instagram.com/lossaboresdenatalina/"
+                        role="button"
+                    ><i class="fab fa-instagram"></i></a>
+                    <!-- WhatsApp -->
+                    <a
+                        class="btn btn-primary btn-floating m-1"
+                        style="background-color: green;"
+                        role="button"
+                        href="https://api.whatsapp.com/send?phone=56998260954"
+                        target="_blank"
+                    ><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+        </footer>
 </div>

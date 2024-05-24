@@ -3,6 +3,8 @@ from .models import *
 from .forms import ContactFormForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
 import random
 # Create your views here.
 
@@ -15,15 +17,22 @@ def about(request):
 def exito(request):
     return render(request, 'exito.html')
 
+
+#contacto directo a un correo
 def contacto(request):
     if request.method == 'POST':
         form = ContactFormForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect ('exito')
+            instance = form.save()
+            sender_email = instance.customer_email
+            subject = instance.customer_name
+            message = instance.message
+            #send_mail(subject, message, settings.EMAIL_HOST_USER, [sender_email, 'test@mail.com'], fail_silently=False)  # Ensure 'to' is a list or tuple
+            return redirect('exito')
     else:
         form = ContactFormForm()
     return render(request, 'contacto.html', {'form': form})
+
 
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'
@@ -58,8 +67,10 @@ def list_all_pasta_view(request):
 
 def pasta_detail_view(request, producto_id):
     pasta_instance = get_object_or_404(Pasta, pk=producto_id)
+    random_prod = random.sample(list(Pasta.objects.exclude(pk=producto_id)), 3)
     context = {
         'pasta': pasta_instance,
+        'random_prod': random_prod,
     }
     return render(request, 'pasta_detail.html', context)
 

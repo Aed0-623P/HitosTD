@@ -2,56 +2,9 @@
 {%load static%}
 
 
-{% block 'navbar' %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a href="{% url 'index' %}" class="navbar-brand" aria-label="Toggle navigation">
-            <img src="{% static 'logo.png' %}" style="width: auto; height: 30px;" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Index</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
-                </li>
-                <div class="dropdown ">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Contact
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{% url 'contacto' %}">Contacto empresas</a></li>
-                      <li><a class="dropdown-item" href="https://www.intercom.com/">Servicio en línea</a></li>
-                      <li><a class="dropdown-item" href="https://maps.app.goo.gl/VQmL6BSyR8sSkWLm6">Nuestra ubicación</a></li>
-                    </ul>
-                  </div>
-            </ul>
-            <ul class="navbar-nav">
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <p class="nav-link mb-0">Bienvenido {{ user.username }}</p>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
-                </li>
-                {% endif %}
-            </ul>
-        </div>
-    </div>
-</nav>       
-{% endblock %}
-
 {% block header %}
 <div class="header-style" style="background: none;">
-    <img src="{% static 'logo.png' %}" style="width: 35%;" alt="Logo">
+    <img src="{% static 'logo.png' %}" style="height: 200px;" alt="Logo">
 </div>
 {% endblock %}
 
@@ -77,13 +30,3 @@
 </div>
 {% endblock %}
 
-{% block footer %}
-<div style="background-color: none; text-align: center; color: white; padding: 40px 0;" >
-    <div style="color:black; margin: 0; font-size: 30px;">Desarrollado por Felipe Aedo para Desafío Latam</div>
-        <div class="social-icons">
-        <a href="https://twitter.com/home" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-    </div>
-</div>
-{% endblock %}

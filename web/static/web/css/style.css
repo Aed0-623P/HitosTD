@@ -22,7 +22,6 @@ body, html {
 }
 
 .footer-container {
-    background: #8EB3A6;
     text-align: center;
     color: white;
     padding: 20px 0;
@@ -35,11 +34,18 @@ body, html {
 }
 
 .footer {
+    background-color:white;
     transition: transform 0.3s ease;
 }
 
-.hidden-footer {
-transform: translateY(100%);
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer.mt-auto {
+    margin-top: auto;
 }
 
 .login-style{
@@ -64,6 +70,13 @@ transform: translateY(100%);
     aspect-ratio: 1.91/1;
     height: 400px; /* Set the height to 25% of the viewport height */
     width: 100%;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+.nav-item {
+    margin-right: 1rem; /* Adjust spacing between nav items */
 }
 
 /*test area*/
