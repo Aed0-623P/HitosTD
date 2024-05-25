@@ -20,13 +20,20 @@ from django.conf import settings
 from django.conf.urls.static import static
 from web.views import *
 from web import views
+from web.views import welcome
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", all_productos_view, name="index"),  
     path("about/", about, name="about"),
     path("contacto/", contacto, name="contacto"),
+    #usuario
     path('registration/', include('django.contrib.auth.urls')),
+    path('perfil/', actualizar_usuario, name='actualizar_usuario'),
+    path('registro/', registro_usuario, name='registro_usuario'),
+    path("welcome/",welcome,name="welcome"),
+    path("exito/", exito, name="exito"),
+    #productos
     path('producto/<int:producto_id>/', prod_detail, name='prod_detail'),
     path('search/', search_view, name='buscar'),
     # detalle cada producto

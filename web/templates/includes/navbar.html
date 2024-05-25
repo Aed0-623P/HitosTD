@@ -38,6 +38,22 @@
                     <input class="form-control me-2" type="text" name="query" placeholder="" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Búsqueda</button>
                 </form>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'actualizar_usuario' %}">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'registro_usuario' %}">Registro</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

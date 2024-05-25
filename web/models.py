@@ -42,3 +42,14 @@ class ContactForm(models.Model):
 
     def __str__(self):
         return self.customer_name
+    
+class Usuario(User):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    rut = models.CharField(max_length=10, unique=True)
+    direccion = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=15)
+    correo_electronico = models.EmailField(unique=True, default='correo@correo.cl') 
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"

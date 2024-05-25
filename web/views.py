@@ -1,12 +1,15 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
-from .forms import ContactFormForm, SearchForm
+from django.contrib.auth import login, authenticate
+from .forms import ContactFormForm, SearchForm, RegistroUsuarioForm, CustomUserChangeForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
 from cart.cart import Cart
+from django.contrib import messages
 import random
+
 
 
 def index(request):
@@ -19,6 +22,7 @@ def politica(request):
     return render(request, 'politica.html')
 
 #contacto directo a un correo
+
 def contacto(request):
     if request.method == 'POST':
         form = ContactFormForm(request.POST)
@@ -38,6 +42,8 @@ class CustomLoginView(LoginView):
 
 class CustomLogoutView(LogoutView):
     next_page = '/'
+
+#lista y detalle productos
 
 def all_productos_view(request):
     all_products = Producto.objects.all()
@@ -120,6 +126,8 @@ def coctel_detail_view(request, producto_id):
     }
     return render(request, 'detalle/coctel_detail.html', context)
 
+#search bar
+
 def search_view(request):
     form = SearchForm(request.GET)
     results = []
@@ -128,13 +136,9 @@ def search_view(request):
         results = Producto.objects.filter(name__icontains=query)
     return render(request, 'busqueda.html', {'results': results})
 
+#carrito de compras
 
-
-
-
-#test area
-
-@login_required(login_url="/users/login")
+@login_required()
 def cart_add(request, id):
     cart = Cart(request)
     product = Producto.objects.get(id=id)
@@ -142,7 +146,7 @@ def cart_add(request, id):
     return redirect("index")
 
 
-@login_required(login_url="/users/login")
+@login_required()
 def item_clear(request, id):
     cart = Cart(request)
     product = Producto.objects.get(id=id)
@@ -150,7 +154,7 @@ def item_clear(request, id):
     return redirect("cart_detail")
 
 
-@login_required(login_url="/users/login")
+@login_required()
 def item_increment(request, id):
     cart = Cart(request)
     product = Producto.objects.get(id=id)
@@ -158,7 +162,7 @@ def item_increment(request, id):
     return redirect("cart_detail")
 
 
-@login_required(login_url="/users/login")
+@login_required()
 def item_decrement(request, id):
     cart = Cart(request)
     product = Producto.objects.get(id=id)
@@ -166,14 +170,54 @@ def item_decrement(request, id):
     return redirect("cart_detail")
 
 
-@login_required(login_url="/users/login")
+@login_required()
 def cart_clear(request):
     cart = Cart(request)
     cart.clear()
     return redirect("cart_detail")
 
 
-@login_required(login_url="/users/login")
+@login_required()
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'detalle/cart_detail.html', {'cart': cart.cart})
+
+#test area
+
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            usuario = form.save(commit=False)
+            password = form.cleaned_data['password']
+            usuario.set_password(password)
+            usuario.save()
+            # Autenticar al usuario después del registro
+            usuario_autenticado = authenticate(username=usuario.username, password=password)
+            if usuario_autenticado is not None:
+                login(request, usuario_autenticado)
+                return redirect('index')  
+    else:
+        form = RegistroUsuarioForm()
+    return render(request, 'registro_usuario.html', {'form': form})
+
+@login_required
+def actualizar_usuario(request):
+    if request.method == 'POST':
+        form = CustomUserChangeForm(request.POST, instance=request.user.usuario)
+        print(form)
+        if form.is_valid():
+            form.save()
+            messages.success(request, '¡Los datos del usuario han sido actualizados!')
+            return redirect('index') 
+    else:
+        form = CustomUserChangeForm(instance=request.user.usuario)
+    return render(request, 'perfil.html', {'form': form})
+
+@login_required
+def welcome(request):
+    flanes_privados = Usuario.objects.filter()
+    return render(request, 'welcome.html', {'flanes' : flanes_privados})
+
+def exito(request):
+    return render(request, 'exito.html')
