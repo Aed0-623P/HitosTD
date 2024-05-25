@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load cart_tag %}
+
+
+<head>
+    <title>Cart Details</title>
+</head>
+
+<body>
+    <h1>Your Shopping Cart</h1>
+    {% if cart %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>${{ item.product.price }}</td>
+                    <td>${{ item.total_price }}</td>
+                    <td>
+                        <a href="{% url 'item_increment' item.product.id %}">Increment</a>
+                        <a href="{% url 'item_decrement' item.product.id %}">Decrement</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Total: ${{ cart_total_amount }}</h3>
+        <a href="{% url 'cart_clear' %}">Clear Cart</a>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+</body>
+
+
+
+{% endblock %}

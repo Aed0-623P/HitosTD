@@ -1,48 +1,35 @@
 {% load static%}
 
-    <div class="footer mt-auto py-3">
-        <footer class="text-center text-white">
-            <div class="footer-text">Los Sabores De Natalina</div>
 
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-                            <p class="footer-text">contacto: 
-                9 9826 0954
-                lossaboresdenatalina@gmail.com</p>
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a
-                        class="btn btn-primary btn-floating m-1"
-                        style="background-color: #3b5998;"
-                        href="https://www.facebook.com/lossaboresdenatalina/"
-                        role="button"
-                    ><i class="fab fa-facebook-f"></i></a>
-                    <!-- Google -->
-                    <a
-                        class="btn btn-primary btn-floating m-1"
-                        style="background-color: #dd4b39;"
-                        href="{% url 'contacto' %}"
-                        role="button"
-                    ><i class="fab fa-google"></i></a>
-                    <!-- Instagram -->
-                    <a
-                        class="btn btn-primary btn-floating m-1"
-                        style="background-color: #ac2bac;"
-                        href="https://www.instagram.com/lossaboresdenatalina/"
-                        role="button"
-                    ><i class="fab fa-instagram"></i></a>
-                    <!-- WhatsApp -->
-                    <a
-                        class="btn btn-primary btn-floating m-1"
-                        style="background-color: green;"
-                        role="button"
-                        href="https://api.whatsapp.com/send?phone=56998260954"
-                        target="_blank"
-                    ><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-        </footer>
+<div class="footer mt-auto col-sm-12 col-lg-12" style="margin: 0px;">
+    <div class="footer_left">
+        <ul class="no-list-style">
+            <li>Los Sabores De Natalina</li>
+            <li><a href={% url 'contacto' %}>Contacto:</li></a>
+            <li><a href="https://api.whatsapp.com/send?phone=56998260954">+56 9 9826 0954</li></a>
+            <li>lossaboresdenatalina@gmail.com</li>
+        </ul>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/lossaboresdenatalina/" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="{% url 'contacto' %}" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/lossaboresdenatalina/" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-primary btn-floating m-1" style="background-color: green;" role="button" href="https://api.whatsapp.com/send?phone=56998260954" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="footer_center">
+        <ul class="no-list-style">
+            <li>Nuestros Productos</li>
+            <li><a class="btn btn-link" href="{% url 'list_all_pasta' %}" style="padding-left: 0px;"> Pastas </a></li>
+            <li><a class="btn btn-link" href="{% url 'list_all_salsa' %}"style="padding-left: 0px;"> Salsas </a></li>
+            <li><a class="btn btn-link" href="{% url 'list_all_coctel' %}"style="padding-left: 0px;"> Coctel </a></li>
+            <li><a class="btn btn-link" href="{% url 'list_all_dulce' %}"style="padding-left: 0px;"> Dulce </a></li>
+        </ul>
+    </div>
+
+    <div class="footer_right">
+        <ul class="no-list-style">
+            <li>Nuestra ubicación:</li>
+            <li><p>Retiro en San Joaquín o despacho a convenir</p></li>
+            <li><a class="btn btn-link" href="{% url 'politica' %}"style="padding-left: 0px;"> Politica de devoluciones </a></li>
+        </ul>
+    </div>
 </div>

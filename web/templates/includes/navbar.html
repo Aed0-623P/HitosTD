@@ -18,7 +18,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
-                </li>
+                </li>                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Productos
@@ -30,6 +30,14 @@
                         <li><a class="dropdown-item" href="{% url 'list_all_dulce' %}">Dulces</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'cart_detail' %}">Shopping Cart</a>
+                </li>
+                
+                <form class="d-flex" method="GET" action="{% url 'buscar' %}" role="search">
+                    <input class="form-control me-2" type="text" name="query" placeholder="" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+                </form>
             </ul>
         </div>
     </div>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- busqueda.html -->
+<div class="container">
+    <h2>Resultados</h2>
+    <div class="row">
+      {% if results %}
+        {% for result in results %}
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <div class="card-body">
+              <img src="{{ result.image_url.url }}" alt="{{ result.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+              <p class="card-text">{{ result.description }}</p>
+              <!-- detalles u otras cosas necesarias -->
+              <a href="{% url 'prod_detail' result.id %}" class="btn btn-primary">Detalle</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p>No existen productos bajo este nombre</p>
+      {% endif %}
+    </div>
+  </div>
+  
+
+{% endblock %}

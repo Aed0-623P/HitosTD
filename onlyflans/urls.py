@@ -19,26 +19,32 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from web.views import *
+from web import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", all_productos_view, name="index"),  
     path("about/", about, name="about"),
     path("contacto/", contacto, name="contacto"),
-    path("exito/", exito, name="exito"),
     path('registration/', include('django.contrib.auth.urls')),
     path('producto/<int:producto_id>/', prod_detail, name='prod_detail'),
-    path('producto/search/', prod_search, name='prod_search'),
-    
-    # Detail views for each product type
+    path('search/', search_view, name='buscar'),
+    # detalle cada producto
     path('pasta/<int:producto_id>/', pasta_detail_view, name='pasta_detail'),
     path('salsa/<int:producto_id>/', salsa_detail_view, name='salsa_detail'),
     path('dulce/<int:producto_id>/', dulce_detail_view, name='dulce_detail'),
-    path('coctel/<int:producto_id>/', coctel_detail_view, name='coctel_detail'),
-    
-    # List views for each product type
+    path('coctel/<int:producto_id>/', coctel_detail_view, name='coctel_detail'),    
+    # listar productos
     path('pasta/', list_all_pasta_view, name='list_all_pasta'),
     path('salsa/', list_all_salsa_view, name='list_all_salsa'),
     path('dulce/', list_all_dulce_view, name='list_all_dulce'),
     path('coctel/', list_all_coctel_view, name='list_all_coctel'),
+    path('politica/', politica, name='politica'),
+    # Carrito de compra
+    path('cart/add/<int:id>/', views.cart_add, name='cart_add'),
+    path('cart/item_clear/<int:id>/', views.item_clear, name='item_clear'),
+    path('cart/item_increment/<int:id>/', views.item_increment, name='item_increment'),
+    path('cart/item_decrement/<int:id>/', views.item_decrement, name='item_decrement'),
+    path('cart/cart_clear/', views.cart_clear, name='cart_clear'),
+    path('cart/cart-detail/',views.cart_detail,name='cart_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

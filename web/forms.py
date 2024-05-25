@@ -11,3 +11,6 @@ class ContactFormForm(forms.ModelForm):
             'customer_email': 'Correo electrónico',
             'customer_name': 'Nombre',
             'message': 'Mensaje'}
+        
+class SearchForm(forms.Form):
+    query = forms.CharField(label='buscar')

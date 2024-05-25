@@ -1,22 +1,22 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
-from .forms import ContactFormForm
+from .forms import ContactFormForm, SearchForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
+from cart.cart import Cart
 import random
-# Create your views here.
+
 
 def index(request):
-    return render(request, 'index.html', {})
+    return render(request, 'index.html')
 
 def about(request):
     return render(request, 'about.html')
 
-def exito(request):
-    return render(request, 'exito.html')
-
+def politica(request):
+    return render(request, 'politica.html')
 
 #contacto directo a un correo
 def contacto(request):
@@ -32,7 +32,6 @@ def contacto(request):
     else:
         form = ContactFormForm()
     return render(request, 'contacto.html', {'form': form})
-
 
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'
@@ -57,7 +56,6 @@ def prod_detail(request, producto_id):
     }
     return render(request, 'prod_detail.html', context)
 
-
 def list_all_pasta_view(request):
     all_pastas = Pasta.objects.all()
     context = {
@@ -73,7 +71,6 @@ def pasta_detail_view(request, producto_id):
         'random_prod': random_prod,
     }
     return render(request, 'pasta_detail.html', context)
-
 
 def list_all_salsa_view(request):
     all_salsa = Salsa.objects.all()
@@ -117,12 +114,59 @@ def coctel_detail_view(request, producto_id):
     }
     return render(request, 'coctel_detail.html', context)
 
+def search_view(request):
+    form = SearchForm(request.GET)
+    results = []
+    if form.is_valid():
+        query = form.cleaned_data['query']
+        results = Producto.objects.filter(name__icontains=query)
+    return render(request, 'busqueda.html', {'results': results})
+
+
 
 
 
 #test area
 
-def prod_search(request):
-    query = request.GET.get('query')
-    prod = Producto.objects.filter(name__icontains=query) if query else Producto.objects.none()
-    return render(request, 'base.html', {'prod': prod, 'query': query})
+@login_required(login_url="/users/login")
+def cart_add(request, id):
+    cart = Cart(request)
+    product = Producto.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("index")
+
+
+@login_required(login_url="/users/login")
+def item_clear(request, id):
+    cart = Cart(request)
+    product = Producto.objects.get(id=id)
+    cart.remove(product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/users/login")
+def item_increment(request, id):
+    cart = Cart(request)
+    product = Producto.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/users/login")
+def item_decrement(request, id):
+    cart = Cart(request)
+    product = Producto.objects.get(id=id)
+    cart.decrement(product=product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/users/login")
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/users/login")
+def cart_detail(request):
+    return render(request, 'cart_detail.html')
