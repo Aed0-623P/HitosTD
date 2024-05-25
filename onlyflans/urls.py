@@ -33,7 +33,7 @@ urlpatterns = [
     path('pasta/<int:producto_id>/', pasta_detail_view, name='pasta_detail'),
     path('salsa/<int:producto_id>/', salsa_detail_view, name='salsa_detail'),
     path('dulce/<int:producto_id>/', dulce_detail_view, name='dulce_detail'),
-    path('coctel/<int:producto_id>/', coctel_detail_view, name='coctel_detail'),    
+    path('coctel/<int:producto_id>/', coctel_detail_view, name='coctel_detail'),
     # listar productos
     path('pasta/', list_all_pasta_view, name='list_all_pasta'),
     path('salsa/', list_all_salsa_view, name='list_all_salsa'),

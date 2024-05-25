@@ -54,14 +54,14 @@ def prod_detail(request, producto_id):
         'random_prod': random_prod,
         'user': request.user,
     }
-    return render(request, 'prod_detail.html', context)
+    return render(request, 'detalle/prod_detail.html', context)
 
 def list_all_pasta_view(request):
     all_pastas = Pasta.objects.all()
     context = {
         'pastas': all_pastas,
     }
-    return render(request, 'list_pasta.html', context)
+    return render(request, 'listado/list_pasta.html', context)
 
 def pasta_detail_view(request, producto_id):
     pasta_instance = get_object_or_404(Pasta, pk=producto_id)
@@ -70,49 +70,55 @@ def pasta_detail_view(request, producto_id):
         'pasta': pasta_instance,
         'random_prod': random_prod,
     }
-    return render(request, 'pasta_detail.html', context)
+    return render(request, 'detalle/pasta_detail.html', context)
 
 def list_all_salsa_view(request):
     all_salsa = Salsa.objects.all()
     context = {
         'salsas': all_salsa,
     }
-    return render(request, 'list_salsa.html', context)
+    return render(request, 'listado/list_salsa.html', context)
 
 def salsa_detail_view(request, producto_id):
     salsa_instance = get_object_or_404(Salsa, pk=producto_id)
+    random_prod = random.sample(list(Pasta.objects.exclude(pk=producto_id)), 3)
     context = {
-        'producto': salsa_instance,
+        'salsa': salsa_instance,
+        'random_prod': random_prod,
     }
-    return render(request, 'salsa_detail.html', context)
+    return render(request, 'detalle/salsa_detail.html', context)
 
 def list_all_dulce_view(request):
     all_dulce = Dulce.objects.all()
     context = {
         'dulces': all_dulce,
     }
-    return render(request, 'list_dulce.html', context)
+    return render(request, 'listado/list_dulce.html', context)
 
 def dulce_detail_view(request, producto_id):
     dulce_instance = get_object_or_404(Dulce, pk=producto_id)
+    random_prod = random.sample(list(Pasta.objects.exclude(pk=producto_id)), 3)
     context = {
-        'producto': dulce_instance,
+        'dulce': dulce_instance,
+        'random_prod': random_prod,
     }
-    return render(request, 'dulce_detail.html', context)
+    return render(request, 'detalle/dulce_detail.html', context)
 
 def list_all_coctel_view(request):
     all_coctel = Coctel.objects.all()
     context = {
         'coctel': all_coctel,
     }
-    return render(request, 'list_coctel.html', context)
+    return render(request, 'listado/list_coctel.html', context)
 
 def coctel_detail_view(request, producto_id):
     coctel_instance = get_object_or_404(Coctel, pk=producto_id)
+    random_prod = random.sample(list(Pasta.objects.exclude(pk=producto_id)), 3)
     context = {
-        'producto': coctel_instance,
+        'coctel': coctel_instance,
+        'random_prod': random_prod,
     }
-    return render(request, 'coctel_detail.html', context)
+    return render(request, 'detalle/coctel_detail.html', context)
 
 def search_view(request):
     form = SearchForm(request.GET)
@@ -169,4 +175,5 @@ def cart_clear(request):
 
 @login_required(login_url="/users/login")
 def cart_detail(request):
-    return render(request, 'cart_detail.html')
+    cart = Cart(request)
+    return render(request, 'detalle/cart_detail.html', {'cart': cart.cart})

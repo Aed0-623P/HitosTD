@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load cart_tag %}
+<!--funciona-->
+<h1>Your Shopping Cart</h1>
+{% if cart %}
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <!--falta insertar tabla con productos en el carrito-->
+    </table>
+    <!--funciona-->
+    <h3>Total: ${{ cart_total_amount }}</h3>
+    <a href="{% url 'cart_clear' %}">Clear Cart</a>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+
+{% endblock %}

@@ -4,15 +4,19 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <img src="{{ pasta.image_url.url }}" class="img-fluid rounded mx-auto d-block" style="max-width: 100%;">
+            <img src="{{ dulce.image_url.url }}" class="img-fluid rounded mx-auto d-block" style="max-width: 100%;">
         </div>
         <div class="col-md-8">
             <div class="card border-0 h-100">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
-                        <h5 class="card-title">{{ pasta.name }}</h5>
-                        <p class="card-text">{{ pasta.description }}</p>
-                        <p class="card-text">Precio: ${{ pasta.price }}</p>
+                        <h5 class="card-title">{{ dulce.name }}</h5>
+                        <p class="card-text">{{ dulce.description }}</p>
+                        <p class="card-text">Precio: ${{ dulce.price }}</p>
+                        <a href="{% url 'cart_add' dulce.id %}">Add To Cart</a>
+                        <a href="{% url 'cart_clear' %}">Clear Cart</a>
+                        <a href="{% url 'item_increment' dulce.id %}">Increment</a>
+                        <a href="{% url 'item_decrement' dulce.id %}">Decrement</a>
                     </div>
                     <div>
                         <a href="{% url 'index' %}" class="btn btn-primary align-self-end">Volver al inicio</a>
@@ -38,6 +42,4 @@
 </div>
 {% endif %}
 </div>
-
-
 {% endblock %}
