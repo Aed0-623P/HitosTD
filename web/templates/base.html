@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/d619ad2787.js" crossorigin="anonymous"></script>
     <!--css-->
     <link rel="stylesheet" type="text/css" href="{% static 'web/css/style.css' %}">
+    {% block extra_css %}{% endblock %}
     <!--favicon-->
     <link rel="icon" href="{% static 'favicon.jpg'%}" type="image/x-icon">
     <title>{% block 'title' %}Los Sabores De Natalina{% endblock %}</title>

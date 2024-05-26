@@ -1,4 +1,5 @@
-{% load static%}
+{%load static %}
+
 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -8,17 +9,18 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left-aligned items -->
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'about' %}">Sobre Nosotros</a>
+                    <a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
-                </li>                
+                    <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Productos
@@ -31,30 +33,36 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'cart_detail' %}">Shopping Cart</a>
+                    <form class="d-flex" method="GET" action="{% url 'buscar' %}" role="search">
+                        <input class="form-control me-2" type="text" name="query" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+                    </form>
                 </li>
-                
-                <form class="d-flex" method="GET" action="{% url 'buscar' %}" role="search">
-                    <input class="form-control me-2" type="text" name="query" placeholder="" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Búsqueda</button>
-                </form>
-
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'actualizar_usuario' %}">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'registro_usuario' %}">Registro</a>
-                </li>
-                {% endif %}
             </ul>
+            <!-- Right-aligned items -->
+
         </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav" style="margin-left: 20px;">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cart_detail' %}">Carrito</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'actualizar_usuario' %}">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'registro_usuario' %}">Nuevo usuario</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
     </div>
 </nav>

@@ -103,15 +103,12 @@ body, html {
 }
 
 .navbar-nav {
-    margin-left: auto;
+    margin-left: 20px
 }
-.nav-item {
-    margin-right: 1rem; /* Adjust spacing between nav items */
-}
+
 
 .container{
     padding-bottom: 20px;
 }
-
-
 /*test area*/
+
