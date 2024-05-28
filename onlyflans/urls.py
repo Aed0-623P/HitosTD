@@ -27,6 +27,7 @@ urlpatterns = [
     path("", all_productos_view, name="index"),  
     path("about/", about, name="about"),
     path("contacto/", contacto, name="contacto"),
+    path("tyc/", tyc, name="terminos"),
     #usuario
     path('registration/', include('django.contrib.auth.urls')),
     path('perfil/', actualizar_usuario, name='actualizar_usuario'),

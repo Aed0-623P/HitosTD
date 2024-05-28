@@ -21,6 +21,9 @@ def about(request):
 def politica(request):
     return render(request, 'politica.html')
 
+def tyc(request):
+    return render(request, 'tyc.html')
+
 #contacto directo a un correo
 
 def contacto(request):
@@ -41,7 +44,7 @@ class CustomLoginView(LoginView):
     template_name = 'registration/login.html'
 
 class CustomLogoutView(LogoutView):
-    next_page = '/'
+    next_page = 'index.html'
 
 #lista y detalle productos
 
