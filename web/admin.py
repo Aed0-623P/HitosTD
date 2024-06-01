@@ -10,3 +10,4 @@ admin.site.register(Salsa)
 admin.site.register(Dulce)
 admin.site.register(Coctel)
 admin.site.register(Usuario)
+

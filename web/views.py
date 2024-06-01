@@ -8,6 +8,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from cart.cart import Cart
 from django.contrib import messages
+from cart import context_processors
 import random
 
 
@@ -185,8 +186,6 @@ def cart_detail(request):
     cart = Cart(request)
     return render(request, 'detalle/cart_detail.html', {'cart': cart.cart})
 
-#test area
-
 def registro_usuario(request):
     if request.method == 'POST':
         form = RegistroUsuarioForm(request.POST)
@@ -224,3 +223,5 @@ def welcome(request):
 
 def exito(request):
     return render(request, 'exito.html')
+
+#test area
