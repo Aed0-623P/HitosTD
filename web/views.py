@@ -218,8 +218,8 @@ def actualizar_usuario(request):
 
 @login_required
 def welcome(request):
-    flanes_privados = Usuario.objects.filter()
-    return render(request, 'welcome.html', {'flanes' : flanes_privados})
+    natalina_privados = Usuario.objects.filter()
+    return render(request, 'welcome.html', {'natalina' : natalina_privados})
 
 def exito(request):
     return render(request, 'exito.html')
