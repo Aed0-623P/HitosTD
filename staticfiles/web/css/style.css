@@ -1,0 +1,114 @@
+/* colores disponibles #A09DFF celestito
+#1F3AAA un azul más intenso #AA83B8 un morado #00A98F agua */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #343135;
+    color: wheat;
+}
+
+.footer div {
+    flex: 1;
+    min-width: 200px;
+    margin: 5px 0;
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer div {
+        margin: 10px 0;
+    }
+
+    .footer_center, .footer_right {
+        display: none;
+    }
+
+    .footer_left ul {
+        align-items: center;
+    }
+
+    .footer_left ul li {
+        margin: 5px 0;
+    }
+}
+.no-list-style {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.login-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.bienvenido{
+    text-align: justify;
+    color: #00A98F;
+    text-transform: capitalize;
+}
+
+.card-detail{
+    margin: 300px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    aspect-ratio: 1.91/1;
+    height: 400px; /* Set the height to 25% of the viewport height */
+    width: 100%;
+}
+
+.navbar-nav {
+    margin-left: 20px
+}
+
+
+.container{
+    padding-bottom: 20px;
+}
+/*test area*/
+
