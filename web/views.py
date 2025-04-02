@@ -186,6 +186,8 @@ def cart_detail(request):
     cart = Cart(request)
     return render(request, 'detalle/cart_detail.html', {'cart': cart.cart})
 
+#Registro Usuario
+
 def registro_usuario(request):
     if request.method == 'POST':
         form = RegistroUsuarioForm(request.POST)
@@ -198,7 +200,10 @@ def registro_usuario(request):
             usuario_autenticado = authenticate(username=usuario.username, password=password)
             if usuario_autenticado is not None:
                 login(request, usuario_autenticado)
-                return redirect('index')  
+                return redirect('index')
+            else:
+            # Print form errors for debugging
+                print(form.errors)  # This will output errors in the console
     else:
         form = RegistroUsuarioForm()
     return render(request, 'registro_usuario.html', {'form': form})
